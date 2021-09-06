@@ -6,8 +6,14 @@ async function getBlog(req, res) {
     const blog = await Blog.findOne({ _id: id })
       .populate("category")
       .populate("cardBanner")
-      .populate("banner") 
-      .populate("author");
+      .populate("banner")
+      .populate({
+        path: "author",
+        populate: {
+          path: "avatar",
+          model: "file",
+        },
+      });
 
     if (blog) {
       res.status(200).json({ blog });

@@ -1,0 +1,45 @@
+.create-blog {
+  width: 90%;
+  margin: 0 5%;
+  padding: 2rem;
+}
+
+.create-blog hr {
+  border: solid 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgb(141, 126, 131);
+}
+
+.create-blog label {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: black;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.create-blog form button {
+  background-color: royalblue;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 0.9rem auto;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.3rem;
+  width: fit-content;
+  color: white;
+}
+
+.create-blog form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-blog input,
+.create-blog textarea {
+  font-size: 2rem;
+  color: black;
+  padding: 1rem;
+  margin: 1rem 0 2rem 0;
+}

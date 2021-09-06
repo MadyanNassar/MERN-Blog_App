@@ -1,0 +1,44 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  box-shadow: 0 6px 3px -5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  position: fixed;
+  background-color: rgb(235, 236, 238);
+  width: 95vw;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  width: 5rem;
+}
+
+.title {
+  color: rgb(5, 4, 92);
+  margin-left: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  margin: 0rem 2rem;
+  color: black;
+  position: relative;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: 0.75s;
+}
+
+.nav-link:hover {
+  color: wheat;
+  background-color: black;
+}

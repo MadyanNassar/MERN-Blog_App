@@ -6,10 +6,16 @@ async function getBlogs(req, res) {
       .populate("category")
       .populate("cardBanner")
       .populate("banner")
-      .populate("author")
+      .populate({
+        path: "author",
+        populate: {
+          path: "avatar",
+          model: "file",
+        },
+      })
       .exec();
     res.status(200).send(blog);
-  } catch (error) {
+  } catch (err) {
     res.status(500).json({ message: "Can't get Blogs" });
   }
 }

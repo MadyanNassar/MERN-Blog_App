@@ -1,0 +1,76 @@
+.blog-list-title {
+  text-align: center;
+  color: rgb(94, 91, 91);
+  margin-bottom: 4rem;
+}
+
+.blogs-preview {
+  width: 90%;
+  margin: 0 5%;
+  padding: 2rem;
+  box-shadow: 6px 6px 3px -4px rgba(0, 0, 0, 0.1);
+}
+
+.blogs-preview h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: black;
+  margin-bottom: 2rem;
+}
+
+.blogs-preview h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  color: rgb(85, 83, 83);
+  margin-bottom: 2rem;
+}
+
+.blogs-preview p {
+  font-size: 2rem;
+  color: gray;
+  margin-bottom: 2rem;
+}
+
+.blogs-list {
+  display: flex;
+  justify-content: space-between;
+  max-height: 20rem;
+  align-items: center;
+  overflow: hidden;
+}
+
+.blogs-list .banner-image {
+  width: 100px;
+}
+
+.blogs-list-details {
+  justify-content: flex-start;
+}
+
+.blogs-list-main .no-blogs {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2rem;
+  color: rgb(139, 50, 50);
+  margin-bottom: 2rem;
+}
+
+.not-fav-button {
+  font-size: 7rem;
+  color: blue;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.fav-button {
+  font-size: 7rem;
+  color: red;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+
+html {
+  font-size: 9px;
+}
+
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 427px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+body {
+  max-width: 95vw;
+  font-size: 2rem;
+  background-color: rgb(235, 236, 238);
+  color: black;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.body-content {
+  padding-top: 8rem;
+}
