@@ -14,11 +14,7 @@ const Home = () => {
       <div className="home">
         {error && <div>{error}</div>}
         {isPending && (
-          <img
-            src={loading}
-            style={{ margin: "0 auto", display: "block", height: "50vh" }}
-            alt="loading"
-          />
+          <img src={loading} className="loading-img" alt="loading" />
         )}
         {blogs && <BlogList blogs={blogs} />}
       </div>

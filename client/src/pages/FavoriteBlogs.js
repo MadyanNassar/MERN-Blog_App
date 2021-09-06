@@ -39,7 +39,7 @@ const FavoriteBlogs = () => {
                   </div>
                 </Link>
                 <span
-                  title="Press to remove from your Favorite List"
+                  title="remove this Blog from your Favorite List"
                   blog={JSON.stringify(blog)}
                   onClick={(e) => {
                     removeFromFav(e);

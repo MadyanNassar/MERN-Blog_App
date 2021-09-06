@@ -53,8 +53,8 @@ const BlogList = ({ blogs }) => {
               <span
                 title={
                   savedBlogs.some((item) => item._id === blog._id)
-                    ? "Blog in your Favorite List"
-                    : "Press to Add to your Favorite List"
+                    ? " this Blog is in your Favorite List"
+                    : "Press to Add this Blog to your Favorite List"
                 }
                 blog={JSON.stringify(blog)}
                 onClick={(e) => {

@@ -17,6 +17,10 @@ const BlogDetails = () => {
     const banner_id = blogs.blog.banner[0]._id;
     const cardBanner_id = blogs.blog.cardBanner[0]._id;
 
+    const favBlogList = JSON.parse(localStorage.getItem("blogs")) || [];
+    const unSave = favBlogList.filter((item) => item._id !== blogs.blog._id);
+    localStorage.setItem("blogs", JSON.stringify(unSave));
+
     // await deleteFunc(author_id, "author");
     // await deleteFunc(author_avatar_id, "file");
     await deleteFunc(banner_id, "file");
@@ -28,13 +32,7 @@ const BlogDetails = () => {
 
   return (
     <div className="blog-details">
-      {isPending && (
-        <img
-          src={loading}
-          style={{ margin: "0 auto", display: "block", height: "50vh" }}
-          alt="loading"
-        />
-      )}
+      {isPending && <img src={loading} className="loading-img" alt="loading" />}
       {error && <div>{error}</div>}
       {blogs && (
         <article>

@@ -31,16 +31,6 @@ const CreateBlog = () => {
     cardBanner,
   };
 
-  const handleBanner = (e) => {
-    setBannerImg(e.target.files[0]);
-  };
-  const handleCard = (e) => {
-    setCardImg(e.target.files[0]);
-  };
-  const handleAuthorAvatar = (e) => {
-    setAvatarImg(e.target.files[0]);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newBanner = await uploadFile(bannerImg, bannerID);
@@ -57,10 +47,9 @@ const CreateBlog = () => {
         categoryName: categoryName,
         ...blog,
       }),
-    })
-    // .then(() => {
-    //   history.push("/");
-    // });
+    }).then(() => {
+      history.push("/");
+    });
   };
 
   return (
@@ -97,7 +86,9 @@ const CreateBlog = () => {
           required
           accept="image/png, image/jpg, image/jpeg"
           className="upload-btn"
-          onChange={handleBanner}
+          onChange={(e) => {
+            setBannerImg(e.target.files[0]);
+          }}
         />
         <label>Card Image:</label>
         <input
@@ -105,7 +96,9 @@ const CreateBlog = () => {
           required
           accept="image/png, image/jpg, image/jpeg"
           className="upload-btn"
-          onChange={handleCard}
+          onChange={(e) => {
+            setCardImg(e.target.files[0]);
+          }}
         />
         <hr />
         <label>category:</label>
@@ -130,7 +123,7 @@ const CreateBlog = () => {
           accept="image/png, image/jpg, image/jpeg"
           required
           className="upload-btn"
-          onChange={handleAuthorAvatar}
+          onChange={(e) => setAvatarImg(e.target.files[0])}
         />
         <button>Add Blog</button>
       </form>
