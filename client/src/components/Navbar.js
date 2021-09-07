@@ -1,8 +1,23 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import logoIcon from "../media/icon.png";
 import "./styles/Navbar.css";
 
 const Navbar = () => {
+  let userState = localStorage.getItem("admin") || null;
+  const [isAdmin, setIsAdmin] = useState(userState);
+
+  const handleAdmin = () => {
+    const inputKey = window.prompt("Enter the Admin secret key");
+    const adminKey = process.env.REACT_APP_ADMIN_KEY;
+
+    if (inputKey === adminKey) {
+      localStorage.setItem("admin", true);
+      setIsAdmin(true);
+      window.alert("Congratulations You are now Admin");
+    }
+  };
+
   return (
     <nav>
       <NavLink exact to="/">
@@ -21,6 +36,27 @@ const Navbar = () => {
         <NavLink exact to="/add_blog" className="nav-link">
           <span>New Blog</span>
         </NavLink>
+        {isAdmin ? (
+          <span
+            className="admin"
+            onClick={() => {
+              window.alert(
+                "You are admin ... you can delete any blog you want, soon you can also edit any blog"
+              );
+            }}
+          >
+            Admin ✔️
+          </span>
+        ) : (
+          <span
+            className="nav-link"
+            onClick={(e) => {
+              handleAdmin(e);
+            }}
+          >
+            Grant as Admin
+          </span>
+        )}
       </div>
     </nav>
   );

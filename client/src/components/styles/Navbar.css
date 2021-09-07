@@ -29,6 +29,16 @@ nav {
   justify-content: flex-end;
 }
 
+.nav-links .admin {
+  margin: 0rem 2rem;
+  color: green;
+  font-weight: bold;
+  position: relative;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: 0.75s;
+  cursor: default;
+}
 .nav-link {
   margin: 0rem 2rem;
   color: black;
@@ -36,6 +46,7 @@ nav {
   padding: 1rem;
   border-radius: 10px;
   transition: 0.75s;
+  cursor: pointer;
 }
 
 .nav-link:hover {

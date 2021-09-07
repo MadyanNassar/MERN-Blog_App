@@ -5,29 +5,39 @@ import loading from "../media/loading.gif";
 import "./styles/BlogDetails.css";
 
 const BlogDetails = () => {
+  const userState = localStorage.getItem("admin") || false;
+
   const { id } = useParams();
   const url = `http://localhost:3001/api/blog/${id}`;
   const { data: blogs, isPending, error } = useFetch(url);
 
   const history = useHistory();
 
-  const handleDelete = async () => {
-    // const author_id = blogs.blog.author[0]._id;
-    // const author_avatar_id = blogs.blog.author[0].avatar[0]._id;
-    const banner_id = blogs.blog.banner[0]._id;
-    const cardBanner_id = blogs.blog.cardBanner[0]._id;
+  const handleDelete = async (e) => {
+    if (!userState) {
+      window.alert(
+        "Sorry, You can't delete blogs .. please tab on Grant as Admin and enter the secret key to be able to delete blogs"
+      );
+      e.target.style = "background-color: gray; cursor: not-allowed";
+      e.target.disabled = true;
+    } else {
+      // const author_id = blogs.blog.author[0]._id;
+      // const author_avatar_id = blogs.blog.author[0].avatar[0]._id;
+      const banner_id = blogs.blog.banner[0]._id;
+      const cardBanner_id = blogs.blog.cardBanner[0]._id;
 
-    const favBlogList = JSON.parse(localStorage.getItem("blogs")) || [];
-    const unSave = favBlogList.filter((item) => item._id !== blogs.blog._id);
-    localStorage.setItem("blogs", JSON.stringify(unSave));
+      const favBlogList = JSON.parse(localStorage.getItem("blogs")) || [];
+      const unSave = favBlogList.filter((item) => item._id !== blogs.blog._id);
+      localStorage.setItem("blogs", JSON.stringify(unSave));
 
-    // await deleteFunc(author_id, "author");
-    // await deleteFunc(author_avatar_id, "file");
-    await deleteFunc(banner_id, "file");
-    await deleteFunc(cardBanner_id, "file");
-    await deleteFunc(id, "blog").then(() => {
-      history.push("/");
-    });
+      // await deleteFunc(author_id, "author");
+      // await deleteFunc(author_avatar_id, "file");
+      await deleteFunc(banner_id, "file");
+      await deleteFunc(cardBanner_id, "file");
+      await deleteFunc(id, "blog").then(() => {
+        history.push("/");
+      });
+    }
   };
 
   return (
@@ -55,7 +65,7 @@ const BlogDetails = () => {
               alt="Blog Banner"
             />
           </div>
-          <button onClick={handleDelete}>Delete this Blog</button>
+          <button onClick={(e) => handleDelete(e)}>Delete this Blog</button>
         </article>
       )}
     </div>
