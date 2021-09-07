@@ -1,9 +1,12 @@
+import { useHistory } from "react-router";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import logoIcon from "../media/icon.png";
 import "./styles/Navbar.css";
 
 const Navbar = () => {
+  const history = useHistory();
+
   let userState = localStorage.getItem("admin") || null;
   const [isAdmin, setIsAdmin] = useState(userState);
 
@@ -15,6 +18,10 @@ const Navbar = () => {
       localStorage.setItem("admin", true);
       setIsAdmin(true);
       window.alert("Congratulations You are now Admin");
+      history.go(0)
+    }
+    else {
+      window.alert(`${inputKey} is not a secret key ... please try again`)
     }
   };
 
@@ -54,7 +61,7 @@ const Navbar = () => {
               handleAdmin(e);
             }}
           >
-            Make me as Admin
+            Make me Admin
           </span>
         )}
       </div>

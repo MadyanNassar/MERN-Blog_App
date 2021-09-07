@@ -16,7 +16,7 @@ const BlogDetails = () => {
   const handleDelete = async (e) => {
     if (!userState) {
       window.alert(
-        "Sorry, You can't delete blogs .. please tab on Grant as Admin and enter the secret key to be able to delete blogs"
+        "Sorry, You can't delete blogs .. please tab on Make me Admin and enter the secret key to be able to delete blogs"
       );
       e.target.style = "background-color: gray; cursor: not-allowed";
       e.target.disabled = true;
