@@ -37,7 +37,7 @@ const CreateBlog = () => {
     const newCard = await uploadFile(cardImg, cardID);
     const newAvatar = await uploadFile(avatarImg, avatarID);
 
-    await fetch("http://localhost:3001/api/blog/", {
+    await fetch("/api/blog/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

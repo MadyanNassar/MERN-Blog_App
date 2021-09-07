@@ -5,7 +5,7 @@ import bannerLogo from "../media/blogs-banner.jpg";
 import "./styles/Home.css";
 
 const Home = () => {
-  const url = "http://localhost:3001/api/blog";
+  const url = "/api/blog";
   const { error, isPending, data: blogs } = useFetch(url);
 
   return (

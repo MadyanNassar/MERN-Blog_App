@@ -2,7 +2,7 @@
     const formData = new FormData();
     formData.append("file", img);
     try {
-      const response = await fetch("http://localhost:3001/api/file/", {
+      const response = await fetch("/api/file/", {
         method: "POST",
         body: formData,
       });

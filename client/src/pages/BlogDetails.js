@@ -8,7 +8,7 @@ const BlogDetails = () => {
   const userState = localStorage.getItem("admin") || false;
 
   const { id } = useParams();
-  const url = `http://localhost:3001/api/blog/${id}`;
+  const url = `/api/blog/${id}`;
   const { data: blogs, isPending, error } = useFetch(url);
 
   const history = useHistory();
