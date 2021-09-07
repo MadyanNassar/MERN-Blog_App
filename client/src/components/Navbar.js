@@ -54,7 +54,7 @@ const Navbar = () => {
               handleAdmin(e);
             }}
           >
-            Grant as Admin
+            Make me as Admin
           </span>
         )}
       </div>

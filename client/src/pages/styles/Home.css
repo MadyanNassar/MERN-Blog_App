@@ -5,12 +5,12 @@
 }
 
 .banner-logo {
-  width: 100%;
+  width: 95vw;
   border-radius: 5px;
 }
 
 .home .loading-img {
   margin: 5rem auto;
   display: block;
-  height: 50vh;
+  height: 20vh;
 }
