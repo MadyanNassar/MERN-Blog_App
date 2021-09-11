@@ -39,7 +39,7 @@ async function createBlog(req, res) {
 
     const newAuthor = (await Author.findOne({ name: name }))
       ? await Author.findOne({ name: name })
-      : await new Author({ name: name, avatar: avatarImg }).save()
+      : await new Author({ name: name, avatar: avatarImg }).save();
 
     const newCategory = (await Category.findOne({ name: categoryName }))
       ? await Category.findOne({ name: categoryName })
@@ -49,7 +49,14 @@ async function createBlog(req, res) {
 
     await Blog.updateOne(
       newBlog,
-      { $push: { banner: bannerImg, cardBanner: cardImg, author: newAuthor, category:newCategory } },
+      {
+        $push: {
+          banner: bannerImg,
+          cardBanner: cardImg,
+          author: newAuthor,
+          category: newCategory,
+        },
+      },
       { new: true }
     ).exec();
     await newBlog

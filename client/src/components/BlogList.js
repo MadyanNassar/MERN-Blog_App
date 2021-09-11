@@ -33,7 +33,7 @@ const BlogList = ({ blogs }) => {
         <>
           {blogs.map((blog) => (
             <div className="blogs-preview" key={blog._id}>
-              <Link to={`/blogs/${blog._id}`}>
+              <Link to={`/blog/${blog._id}`}>
                 <div className="blogs-list">
                   <div className="blogs-list-details">
                     <h1>{blog.title}</h1>

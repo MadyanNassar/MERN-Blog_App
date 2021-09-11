@@ -1,4 +1,5 @@
 import { useHistory, useParams } from "react-router";
+import { Link } from "react-router-dom";
 import useFetch from "../functions/useFetch";
 import deleteFunc from "../functions/deleter";
 import loading from "../media/loading.gif";
@@ -14,30 +15,22 @@ const BlogDetails = () => {
   const history = useHistory();
 
   const handleDelete = async (e) => {
-    if (!userState) {
-      window.alert(
-        "Sorry, You can't delete blogs .. please tab on Make me Admin and enter the secret key to be able to delete blogs"
-      );
-      e.target.style = "background-color: gray; cursor: not-allowed";
-      e.target.disabled = true;
-    } else {
-      // const author_id = blogs.blog.author[0]._id;
-      // const author_avatar_id = blogs.blog.author[0].avatar[0]._id;
-      const banner_id = blogs.blog.banner[0]._id;
-      const cardBanner_id = blogs.blog.cardBanner[0]._id;
+    // const author_id = blogs.blog.author[0]._id;
+    // const author_avatar_id = blogs.blog.author[0].avatar[0]._id;
+    const banner_id = blogs.blog.banner[0]._id;
+    const cardBanner_id = blogs.blog.cardBanner[0]._id;
 
-      const favBlogList = JSON.parse(localStorage.getItem("blogs")) || [];
-      const unSave = favBlogList.filter((item) => item._id !== blogs.blog._id);
-      localStorage.setItem("blogs", JSON.stringify(unSave));
+    const favBlogList = JSON.parse(localStorage.getItem("blogs")) || [];
+    const unSave = favBlogList.filter((item) => item._id !== blogs.blog._id);
+    localStorage.setItem("blogs", JSON.stringify(unSave));
 
-      // await deleteFunc(author_id, "author");
-      // await deleteFunc(author_avatar_id, "file");
-      await deleteFunc(banner_id, "file");
-      await deleteFunc(cardBanner_id, "file");
-      await deleteFunc(id, "blog").then(() => {
-        history.push("/");
-      });
-    }
+    // await deleteFunc(author_id, "author");
+    // await deleteFunc(author_avatar_id, "file");
+    await deleteFunc(banner_id, "file");
+    await deleteFunc(cardBanner_id, "file");
+    await deleteFunc(id, "blog").then(() => {
+      history.push("/");
+    });
   };
 
   return (
@@ -65,7 +58,25 @@ const BlogDetails = () => {
               alt="Blog Banner"
             />
           </div>
-          <button onClick={(e) => handleDelete(e)}>Delete this Blog</button>
+          {userState ? (
+            <>
+              <button onClick={(e) => handleDelete(e)}>Delete this Blog</button>
+              <Link to={`/edit-blog/${blogs.blog._id}`}>
+                <button className="edit-btn">Edit this Blog</button>
+              </Link>
+            </>
+          ) : (
+            <p
+              className="no-admin"
+              onClick={() => {
+                window.alert(
+                  "You are not admin and you can't delete or edit blogs, if you want to become admin please tab on Make me Admin and enter the secret key "
+                );
+              }}
+            >
+              Hint
+            </p>
+          )}
         </article>
       )}
     </div>

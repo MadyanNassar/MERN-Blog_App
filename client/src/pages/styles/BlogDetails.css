@@ -78,3 +78,13 @@
   width: fit-content;
   color: white;
 }
+
+.blog-details .edit-btn{
+  background-color: green;
+  margin-left: 3rem;
+}
+
+.blog-details .no-admin{
+  cursor: default;
+   color:blue;
+}
