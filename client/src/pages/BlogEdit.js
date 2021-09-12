@@ -24,7 +24,7 @@ const EditBlog = () => {
   const [cardImg, setCardImg] = useState(null);
   const [avatarImg, setAvatarImg] = useState(null);
 
-  const url = `http://localhost:3001/api/blog/${id}`;
+  const url = `${process.env.REACT_APP_API_URL}/blog/${id}`;
 
   const history = useHistory();
 

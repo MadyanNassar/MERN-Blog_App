@@ -1,5 +1,5 @@
 const deleteFunc = async (id, name) => {
-    await fetch(`http://localhost:3001/api/${name}/${id}`, {
+    await fetch(`${process.env.REACT_APP_API_URL}/${name}/${id}`, {
        method: "DELETE",
      });
      

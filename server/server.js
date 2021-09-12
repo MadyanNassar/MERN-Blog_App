@@ -3,11 +3,10 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
- const router = require ('./routers')
+const router = require("./routers");
 const bodyParser = require("body-parser");
-const { loadDb } = require('./db');
+const { loadDb } = require("./db");
 
-loadDb()
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -23,15 +22,25 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api', router)
+const runServer = async () => {
+  await loadDb();
 
-app.get("*", (req, res) => {
-  try {
-  } catch (err) {
-    console.log(err);
-  }
-});
+  app.use("/api", router);
 
-app.listen(PORT, () => {
-  console.log(`server is running on http://localhost:${PORT}`);
-});
+  app.get("*", (req, res) => {
+    try {
+      res.json({
+        message: "Can't find page, url is not correct",
+        url: req.url,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  });
+
+  app.listen(PORT, () => {
+    console.log(`server is running on port : ${PORT}`);
+  });
+};
+
+runServer();
