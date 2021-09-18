@@ -21,9 +21,7 @@ async function createFile(req, res) {
       })
     );
   } catch (err) {
-    res
-      .status(400)
-      .json({ message: "Can't add the file ...", err });
+    res.status(400).json({ message: "Can't add the file ..." });
   }
 }
 

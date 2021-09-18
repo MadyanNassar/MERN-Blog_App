@@ -5,8 +5,6 @@ async function loadDb() {
     const db = await mongoose.connect(process.env.DB_URL, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
-    //   useFindAndModify: false,
-    //   useCreateIndex: true,
     });
 
     console.log("Db connected");

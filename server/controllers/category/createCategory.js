@@ -17,7 +17,7 @@ async function createCategory(req, res) {
 
     res.status(201).json({ message: "Category created successfully" });
   } catch (err) {
-    res.status(500).json({ message: "Server Error", err });
+    res.status(500).json({ message: "Server Error" });
   }
 }
 

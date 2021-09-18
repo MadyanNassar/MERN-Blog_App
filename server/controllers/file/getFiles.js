@@ -4,7 +4,7 @@ async function getFiles(req, res) {
   try {
     File.find({})
       .select({
-        name:1,
+        name: 1,
         originalName: 1,
         filePath: 1,
         mimeType: 1,
@@ -14,7 +14,7 @@ async function getFiles(req, res) {
       .then((file) => res.status(200).send(file));
   } catch (err) {
     console.log(err);
-    res.status(500).send({message: "Can't find the file"});
+    res.status(404).send({ message: "Can't find the file" });
   }
 }
 

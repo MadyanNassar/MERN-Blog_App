@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory, useParams } from "react-router";
-import useFetch from "../functions/useFetch";
-import uploadFile from "../functions/uploader";
+import useFetch from "../hooks/useFetch";
+import uploadFile from "../utils/uploader";
 import "./styles/CreateBlog.css";
 
 const EditBlog = () => {
@@ -60,7 +60,7 @@ const EditBlog = () => {
           You are Not Admin, and you can't edit blogs
         </h2>
         <button
-        className="make-admin"
+          className="make-admin"
           onClick={(e) => {
             handleAdmin(e);
           }}

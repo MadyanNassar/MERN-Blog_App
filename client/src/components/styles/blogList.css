@@ -6,10 +6,17 @@
 
 .blogs-preview {
   width: 90%;
-  margin: 0 5%;
+  margin: 2rem auto;
   padding: 2rem;
-  box-shadow: 6px 6px 3px -4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 10%);
+  border-radius: 5px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogs-preview:hover {
+  box-shadow: 0px 0px 4px 4px rgb(57 101 21 / 50%);
 }
 
 .blogs-preview h1 {
@@ -17,7 +24,6 @@
   font-size: 2.5rem;
   color: black;
   margin-bottom: 1rem;
-  max-width: 50%;
 }
 
 .blogs-preview h2 {
@@ -39,13 +45,12 @@
   justify-content: space-between;
   align-items: center;
   max-height: 20rem;
-  margin-top: 5rem;
   align-items: center;
   overflow: hidden;
 }
 
 .blogs-list .banner-image {
-  width: 25%;
+  width: 15%;
   border-radius: 20px;
 }
 
@@ -64,7 +69,10 @@
 }
 
 .not-fav-button {
-  font-size: 7rem;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  font-size: 4rem;
   color: blue;
   cursor: pointer;
   -webkit-user-select: none;
@@ -74,7 +82,10 @@
 }
 
 .fav-button {
-  font-size: 7rem;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  font-size: 4rem;
   color: red;
   cursor: pointer;
   -webkit-user-select: none;

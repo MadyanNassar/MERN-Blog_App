@@ -10,7 +10,7 @@ async function updateCategory(req, res) {
     );
     res.status(200).send(update);
   } catch (error) {
-    res.status(500).json({ message:"Can't update Category" });
+    res.status(404).json({ message: "Can't update Category" });
   }
 }
 

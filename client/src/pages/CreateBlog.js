@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
-import uploadFile from "../functions/uploader";
+import uploadFile from "../utils/uploader";
 import "./styles/CreateBlog.css";
 
 const CreateBlog = () => {

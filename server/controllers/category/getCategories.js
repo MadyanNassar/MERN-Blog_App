@@ -5,7 +5,7 @@ async function getCategories(req, res) {
     const categories = await Category.find().exec();
     res.status(200).send(categories);
   } catch (error) {
-    res.status(500).json({ message: "Can't get Categories" });
+    res.status(404).json({ message: "Can't get Categories" });
   }
 }
 

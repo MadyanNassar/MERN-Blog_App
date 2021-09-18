@@ -1,7 +1,7 @@
 import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import useFetch from "../functions/useFetch";
-import deleteFunc from "../functions/deleter";
+import useFetch from "../hooks/useFetch";
+import deleteFunc from "../utils/deleter";
 import loading from "../media/loading.gif";
 import "./styles/BlogDetails.css";
 

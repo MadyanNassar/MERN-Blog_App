@@ -18,10 +18,9 @@ const Navbar = () => {
       localStorage.setItem("admin", true);
       setIsAdmin(true);
       window.alert("Congratulations You are now Admin");
-      history.go(0)
-    }
-    else {
-      window.alert(`${inputKey} is not a secret key ... please try again`)
+      history.go(0);
+    } else {
+      window.alert(`${inputKey} is not a secret key ... please try again`);
     }
   };
 

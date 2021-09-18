@@ -26,11 +26,8 @@ const storage = new CloudinaryStorage({
 const parser = multer({ storage: storage });
 
 router.post("/", parser.single("file"), createFile);
-
 router.get("/", getFiles);
-
 router.get("/:id", getFile);
-
 router.delete("/:id", deleteFile);
 
 module.exports = router;

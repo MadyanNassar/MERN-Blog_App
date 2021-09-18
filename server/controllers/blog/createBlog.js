@@ -66,7 +66,7 @@ async function createBlog(req, res) {
       );
   } catch (err) {
     console.log(err);
-    res.status(500).json({ message: "Can't add the blog ..." });
+    res.status(400).json({ message: "Can't add the blog ..." });
   }
 }
 

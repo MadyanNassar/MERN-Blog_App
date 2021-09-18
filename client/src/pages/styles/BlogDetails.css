@@ -49,8 +49,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 1rem;
-  /* align-items: center; */
 }
 
 .blog-details p {
@@ -79,12 +77,16 @@
   color: white;
 }
 
-.blog-details .edit-btn{
+.blog-details .edit-btn {
   background-color: green;
   margin-left: 3rem;
 }
 
-.blog-details .no-admin{
+.blog-details .no-admin {
   cursor: default;
-   color:blue;
+  color: blue;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

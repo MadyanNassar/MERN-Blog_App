@@ -1,5 +1,5 @@
 import BlogList from "../components/BlogList";
-import useFetch from "../functions/useFetch";
+import useFetch from "../hooks/useFetch";
 import loading from "../media/loading.gif";
 import bannerLogo from "../media/blogs-banner.jpg";
 import "./styles/Home.css";

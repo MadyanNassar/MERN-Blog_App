@@ -8,7 +8,7 @@ async function deleteBlog(req, res) {
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ message: "Can't delete Blog", err });
+    res.status(404).json({ message: "Blog not found" });
   }
 }
 
