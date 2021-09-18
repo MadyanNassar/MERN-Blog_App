@@ -7,14 +7,14 @@ Online Deployment of this project is available at [Blog_MERN_app](https://blog-m
 # Pages
 ## Main page
 
-<img src="./assests/main_page.png" width="400" />
+<img src="./assets/main_page.png" width="400" />
 
 ## Blog detail page
 
-<img src="./assests/blog_details_page.png" width="400" />
+<img src="./assets/blog_details_page.png" width="400" />
 
 ## Create or Edit blog page
-<img src="./assests/add_edit_blog.png" width="400" />
+<img src="./assets/add_edit_blog.png" width="400" />
 
 
 ## Instalation
